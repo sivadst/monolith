@@ -1,0 +1,199 @@
+/* ============================================
+   MONOLITH — BRUTALIST COMPONENTS
+   ============================================ */
+
+/* Utility: Brutalist Border Box */
+.b-box {
+    border: 1px solid #333;
+    padding: 1.5rem;
+    background: #0A0A0A;
+}
+
+/* Utility: Data Table */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.data-table th,
+.data-table td {
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid #222;
+}
+
+.data-table th {
+    color: #00FFFF;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    background: #111;
+}
+
+.data-table td {
+    color: #aaa;
+}
+
+.data-table tr:hover td {
+    background: #111;
+}
+
+/* Utility: Terminal Block */
+.terminal {
+    background: #111;
+    border: 1px solid #333;
+    padding: 1.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.terminal-line {
+    display: block;
+    color: #888;
+}
+
+.terminal-line.prompt::before {
+    content: '>';
+    color: #00FFFF;
+    margin-right: 0.5rem;
+}
+
+.terminal-line.output {
+    color: #aaa;
+    padding-left: 1.25rem;
+}
+
+.terminal-line.error {
+    color: #FF4444;
+}
+
+/* Utility: Alert Banner */
+.alert {
+    border: 1px solid;
+    padding: 1rem 1.5rem;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.alert-info {
+    border-color: #00FFFF;
+    color: #00FFFF;
+    background: rgba(0, 255, 255, 0.05);
+}
+
+.alert-warn {
+    border-color: #FFAA00;
+    color: #FFAA00;
+    background: rgba(255, 170, 0, 0.05);
+}
+
+.alert-error {
+    border-color: #FF4444;
+    color: #FF4444;
+    background: rgba(255, 68, 68, 0.05);
+}
+
+/* Utility: Progress Bar */
+.progress {
+    width: 100%;
+    height: 4px;
+    background: #222;
+    border: 1px solid #333;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #00FFFF;
+    transition: width 0.3s ease;
+}
+
+/* Utility: Badge */
+.badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    padding: 0.125rem 0.5rem;
+    border: 1px solid;
+    letter-spacing: 0.05em;
+}
+
+.badge-new {
+    border-color: #00FFFF;
+    color: #00FFFF;
+}
+
+.badge-wip {
+    border-color: #FFAA00;
+    color: #FFAA00;
+}
+
+.badge-deprecated {
+    border-color: #FF4444;
+    color: #FF4444;
+    text-decoration: line-through;
+}
+
+/* Utility: Divider */
+.divider {
+    height: 1px;
+    background: #222;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.divider::after {
+    content: '◆';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #0A0A0A;
+    padding: 0 1rem;
+    color: #333;
+    font-size: 0.75rem;
+}
+
+/* Utility: Marquee */
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    padding: 1rem 0;
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+    font-size: 0.875rem;
+    color: #555;
+    letter-spacing: 0.1em;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Utility: Grid Overlay (for dev) */
+.grid-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9998;
+    background-image: 
+        linear-gradient(to right, rgba(0,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0,255,255,0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    display: none;
+}
+
+.grid-overlay.active {
+    display: block;
+}
